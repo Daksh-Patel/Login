@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Heading } from "@chakra-ui/react"
+import Header from "components/header"
 
-const HomePage = () => <Heading as='h1'>Daksh</Heading>
+const HomePage = () => <Header />
 export default HomePage
