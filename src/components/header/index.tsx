@@ -9,7 +9,7 @@ const Header = () => {
   const [user, setUser] = useState<string>("Daksh Patel")
 
   return (
-    <Box as='header' py='10px'>
+    <Box as='header' py='10px' boxShadow='lg'>
       <Container maxW='1540px' px='50px'>
         <HStack alignItems='center' justifyContent='space-between'>
           <Link

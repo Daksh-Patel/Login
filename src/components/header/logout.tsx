@@ -1,6 +1,15 @@
 import React from "react"
 
-import { Avatar, Button, Flex, HStack, Text } from "@chakra-ui/react"
+import {
+  Avatar,
+  Button,
+  Flex,
+  HStack,
+  Text,
+  useDisclosure,
+} from "@chakra-ui/react"
+
+import Alert from "./alert"
 
 interface LogoutProps {
   user: string
@@ -10,9 +19,7 @@ interface LogoutProps {
 const Logout = (props: LogoutProps) => {
   const { user, setUser } = props
 
-  const logoutProfile = () => {
-    setUser("")
-  }
+  const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
     <HStack alignItems='center' spacing={8}>
@@ -20,10 +27,13 @@ const Logout = (props: LogoutProps) => {
         letterSpacing={1}
         fontSize='18px'
         fontWeight='semibold'
-        onClick={logoutProfile}
+        onClick={onOpen}
       >
         Logout
       </Button>
+
+      <Alert isOpen={isOpen} onClose={onClose} setUser={setUser} />
+
       <Flex alignItems='center'>
         <Text
           as='h1'
